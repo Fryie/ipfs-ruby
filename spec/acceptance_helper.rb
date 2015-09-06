@@ -1,5 +1,6 @@
 require 'spec_helper'
 require 'webmock/rspec'
+require 'ipfs/client'
 
 RSpec.configure do |config|
   config.before :all do

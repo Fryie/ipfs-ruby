@@ -1,0 +1,43 @@
+require 'spec_helper'
+require 'ipfs/client'
+
+module IPFS
+  describe Client do
+    let(:client) { Client.default }
+
+    describe '.default' do
+      it 'creates client with default host and port' do
+        client = Client.default  
+
+        expect(client.host).to eq Client::DEFAULT_HOST
+        expect(client.port).to eq Client::DEFAULT_PORT
+      end
+    end
+
+    describe '#initialize' do
+      it 'allows to set the host and port' do
+        client = Client.new host: 'myhost', port: 3001
+
+        expect(client.host).to eq 'myhost'
+        expect(client.port).to eq 3001
+      end
+    end
+
+    describe '#ls' do
+      it 'delegates to LS class' do
+        allow(Client::LS).to receive(:call)
+        node = 'abc'
+
+        client.ls node
+
+        expect(Client::LS).to have_received(:call).with node
+      end
+    end
+
+  end
+
+  class Client
+    class LS
+    end
+  end
+end
