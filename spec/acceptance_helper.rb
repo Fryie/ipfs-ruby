@@ -5,7 +5,7 @@ require 'ipfs/client'
 RSpec.configure do |config|
   config.before :all do
     WebMock.disable_net_connect!
-    stub_request :any, api_url
+    stub_request :any, /#{Regexp.escape(api_url)}.*/
   end
 end
 

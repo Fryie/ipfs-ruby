@@ -23,6 +23,15 @@ module IPFS
       end
     end
 
+    describe '#api_url' do
+      it 'is built out of host, port and prefix' do
+        client = Client.new host: 'myhost', port: 8077
+        expect(client.api_url).to eq(
+          "myhost:8077/api/#{Client::API_VERSION}"
+        )
+      end
+    end
+
     describe '#ls' do
       it 'delegates to LS class' do
         allow(Client::LS).to receive(:call)
@@ -30,14 +39,10 @@ module IPFS
 
         client.ls node
 
-        expect(Client::LS).to have_received(:call).with node
+        expect(Client::LS).to have_received(:call).with client, node
       end
     end
 
   end
 
-  class Client
-    class LS
-    end
-  end
 end

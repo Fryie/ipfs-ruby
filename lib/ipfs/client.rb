@@ -1,7 +1,10 @@
+require 'ipfs/client/ls'
+
 module IPFS
   class Client
     DEFAULT_HOST = 'localhost'
     DEFAULT_PORT = 5001
+    API_VERSION = 'v0'
 
     attr_reader :host, :port
 
@@ -13,9 +16,12 @@ module IPFS
       @host, @port = host, port
     end
 
-    def ls(node)
-      LS.call node
+    def api_url
+      "#{host}:#{port}/api/#{API_VERSION}"
     end
 
+    def ls(node)
+      LS.call self, node
+    end
   end
 end
