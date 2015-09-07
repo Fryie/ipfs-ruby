@@ -1,10 +1,11 @@
-# Ipfs
+# IPFS API Bindings for Ruby
+This gem provides IPFS API bindings for Ruby, see [https://ipfs.io](https://ipfs.io).
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/ipfs`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Work in progress.
 
 ## Installation
+
+(The following doesn't work yet, the gem is not yet released on Rubygems.)
 
 Add this line to your application's Gemfile:
 
@@ -21,8 +22,25 @@ Or install it yourself as:
     $ gem install ipfs
 
 ## Usage
+### Initialize client
 
-TODO: Write usage instructions here
+```ruby
+require 'ipfs/client'
+client = IPFS::Client.new host: 'yourhost', port: 5001
+```
+
+or:
+
+```ruby
+require 'ipfs/client'
+client = IPFS::Client.default # => uses localhost and port 5001
+```
+
+### ls
+
+```ruby
+client.ls node # => issues an API ls request, but does not return a result yet
+```
 
 ## Development
 
@@ -32,5 +50,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ipfs.
-
+Bug reports and pull requests are welcome on [GitHub](https://github.com/Fryie/ipfs).

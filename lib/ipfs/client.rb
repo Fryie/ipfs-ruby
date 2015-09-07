@@ -2,7 +2,7 @@ require 'ipfs/client/ls'
 
 module IPFS
   class Client
-    DEFAULT_HOST = 'localhost'
+    DEFAULT_HOST = 'http://localhost'
     DEFAULT_PORT = 5001
     API_VERSION = 'v0'
 

@@ -1,4 +1,4 @@
-require 'http'
+require 'http_wrapper'
 
 class IPFS::Client
   class LS
