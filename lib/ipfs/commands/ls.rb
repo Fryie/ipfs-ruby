@@ -1,4 +1,4 @@
-require 'http_wrapper'
+require 'http'
 require 'json'
 require 'ipfs/content/node'
 
