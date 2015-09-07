@@ -39,8 +39,21 @@ client = IPFS::Client.default # => uses localhost and port 5001
 ### ls
 
 ```ruby
-# issues an API ls request, but does not parse the return value yet
-client.ls 'QmXqJAkSdP8e7TSXEeSRKoDY27G11ZwaFJGiKuNFWxpUZo'
+nodes = client.ls 'QmXqJAkSdP8e7TSXEeSRKoDY27G11ZwaFJGiKuNFWxpUZo'
+
+nodes.each do |node|
+  # node is an instance of IPFS::Content::Node
+
+  puts node.hashcode
+
+  node.links.each do |link|
+    # link is an instance of IPFS::Content::Link
+
+    puts link.name
+    puts link.hashcode
+    puts link.size
+  end
+end
 ```
 
 ## Development
