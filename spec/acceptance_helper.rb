@@ -1,11 +1,12 @@
 require 'spec_helper'
 require 'webmock/rspec'
+require 'mock_api'
 require 'ipfs/client'
 
 RSpec.configure do |config|
-  config.before :all do
+  config.before :each do
     WebMock.disable_net_connect!
-    stub_request :any, /#{Regexp.escape(api_url)}.*/
+    stub_request(:any, /#{Regexp.escape(api_url)}/).to_rack MockAPI
   end
 end
 
