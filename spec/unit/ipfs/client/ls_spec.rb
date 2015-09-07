@@ -1,7 +1,7 @@
 require 'spec_helper'
-require 'ipfs/client/ls'
+require 'ipfs/commands/ls'
 
-class IPFS::Client
+module IPFS::Commands
   describe LS do
     describe '.call' do
       let(:client) { double api_url: 'api-url' }

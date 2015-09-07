@@ -1,8 +1,7 @@
 require 'http_wrapper'
 
 module IPFS
-  class Client
-
+  module Commands
     class LS
 
       def self.call(client, node)
@@ -10,6 +9,5 @@ module IPFS
       end
 
     end
-
   end
 end

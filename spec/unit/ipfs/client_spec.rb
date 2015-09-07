@@ -7,7 +7,7 @@ module IPFS
 
     describe '.default' do
       it 'creates client with default host and port' do
-        client = Client.default  
+        client = Client.default
 
         expect(client.host).to eq Client::DEFAULT_HOST
         expect(client.port).to eq Client::DEFAULT_PORT
@@ -34,12 +34,12 @@ module IPFS
 
     describe '#ls' do
       it 'delegates to LS class' do
-        allow(Client::LS).to receive(:call)
+        allow(Commands::LS).to receive(:call)
         node = 'abc'
 
         client.ls node
 
-        expect(Client::LS).to have_received(:call).with client, node
+        expect(Commands::LS).to have_received(:call).with client, node
       end
     end
 
