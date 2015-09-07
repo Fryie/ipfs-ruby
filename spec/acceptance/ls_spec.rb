@@ -17,9 +17,9 @@ describe 'ls command' do
     result = ipfs.ls node
 
     expect(result.map(&:hashcode)).to eq ['Hash1', 'Hash2']
-    expect(result.links.first.name).to eq 'Link'
-    expect(result.links.first.hashcode).to eq 'Hash3'
-    expect(result.links.first.size).to eq 500
+    expect(result.first.links.first.name).to eq 'Link'
+    expect(result.first.links.first.hashcode).to eq 'Hash3'
+    expect(result.first.links.first.size).to eq 500
   end
 
 end
