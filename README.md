@@ -5,7 +5,7 @@ Work in progress.
 
 ## Installation
 
-(The following doesn't work yet, the gem is not yet released on Rubygems.)
+(The following doesn't work yet, the gem is not yet released on Rubygems. In the meantime, run ```rake install``` from the project root.)
 
 Add this line to your application's Gemfile:
 
@@ -39,7 +39,8 @@ client = IPFS::Client.default # => uses localhost and port 5001
 ### ls
 
 ```ruby
-client.ls node # => issues an API ls request, but does not parse the return value yet
+# issues an API ls request, but does not parse the return value yet
+client.ls 'QmXqJAkSdP8e7TSXEeSRKoDY27G11ZwaFJGiKuNFWxpUZo'
 ```
 
 ## Development
