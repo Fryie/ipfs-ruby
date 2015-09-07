@@ -39,7 +39,7 @@ client = IPFS::Client.default # => uses localhost and port 5001
 ### ls
 
 ```ruby
-client.ls node # => issues an API ls request, but does not return a result yet
+client.ls node # => issues an API ls request, but does not parse the return value yet
 ```
 
 ## Development
@@ -50,4 +50,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on [GitHub](https://github.com/Fryie/ipfs).
+Bug reports and pull requests are welcome on [GitHub](https://github.com/Fryie/ipfs-ruby).
