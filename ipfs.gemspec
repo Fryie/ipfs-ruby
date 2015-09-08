@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = IPFS::VERSION
   spec.authors       = ["Pierpaolo Frasa"]
   spec.email         = ["pfrasa@gmail.com"]
+  spec.license       = 'MIT'
 
   spec.summary       = %q{IPFS API bindings}
   spec.description   = %q{API bindings for the Interplanetary File System}
