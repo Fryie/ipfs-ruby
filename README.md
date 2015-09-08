@@ -6,8 +6,6 @@ Work in progress.
 ## Installation
 Requires Ruby >= 2.1, since it uses the new required keyword arguments syntax.
 
-(The following doesn't work yet, the gem is not yet released on Rubygems. In the meantime, run ```rake install``` from the project root.)
-
 Add this line to your application's Gemfile:
 
 ```ruby
