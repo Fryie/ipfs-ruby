@@ -43,6 +43,16 @@ module IPFS
       end
     end
 
+    describe '#cat' do
+      it 'delegates to Cat class' do
+        allow(Commands::Cat).to receive(:call)
+        node = 'abc'
+
+        client.cat node
+
+        expect(Commands::Cat).to have_received(:call).with client, node
+      end
+    end
   end
 
 end

@@ -22,4 +22,8 @@ class MockAPI < Sinatra::Base
       ]
     }.to_json
   end
+
+  get '/api/v0/cat' do
+    'This is just some text.'
+  end
 end

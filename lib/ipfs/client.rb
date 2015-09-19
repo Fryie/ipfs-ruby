@@ -1,4 +1,5 @@
 require 'ipfs/commands/ls'
+require 'ipfs/commands/cat'
 
 module IPFS
   class Client
@@ -22,6 +23,10 @@ module IPFS
 
     def ls(node)
       Commands::LS.call self, node
+    end
+
+    def cat(node)
+      Commands::Cat.call self, node
     end
   end
 end
