@@ -53,6 +53,16 @@ module IPFS
         expect(Commands::Cat).to have_received(:call).with client, node
       end
     end
-  end
 
+    describe '#add' do
+      it 'delegates to Add class' do
+        allow(Commands::Add).to receive(:call)
+        file = 'myfile'
+
+        client.add file
+
+        expect(Commands::Add).to have_received(:call).with client, file
+      end
+    end
+  end
 end

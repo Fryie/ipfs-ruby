@@ -3,7 +3,6 @@ require 'ipfs/content/node'
 
 module IPFS::Content
   describe Link do
-
     describe '#initialize' do
       it 'sets name, hash and size' do
         link = Link.new name: 'mylink', hashcode: 'abc', size: 300
@@ -11,6 +10,20 @@ module IPFS::Content
         expect(link.name).to eq 'mylink'
         expect(link.hashcode).to eq 'abc'
         expect(link.size).to eq 300
+      end
+    end
+
+    describe '.parse_single' do
+      let(:single_input) do
+        { 'Name' => 'link3', 'Hash' => 'hash3', 'Size' => 1800 }
+      end
+
+      let(:node) { Link.parse_single single_input }
+
+      it 'sets the correct values on the link' do
+        expect(node.name).to eq 'link3'
+        expect(node.hashcode).to eq 'hash3'
+        expect(node.size).to eq 1800
       end
     end
 
