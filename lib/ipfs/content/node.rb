@@ -6,7 +6,8 @@ module IPFS
       attr_reader :hashcode, :links
 
       def initialize(hashcode:, links:)
-        @hashcode, @links = hashcode, links
+        @hashcode = hashcode
+        @links = links
       end
 
       def self.parse_array(array)
@@ -14,7 +15,6 @@ module IPFS
           new(hashcode: item['Hash'], links: Link.parse_array(item['Links']))
         end
       end
-
     end
   end
 end

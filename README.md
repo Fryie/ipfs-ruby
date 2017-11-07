@@ -58,6 +58,13 @@ nodes.each do |node|
 end
 ```
 
+### add
+```ruby
+link = client.add 'myExampleFile.txt'
+puts link.hashcode
+# => QmaVwjMgqjBD25apiuVVnaDqU8SsiiREAAy3Amb1Bs2XHs
+```
+
 ### cat
 ```ruby
 client.cat 'QmaVwjMgqjBD25apiuVVnaDqU8SsiiREAAy3Amb1Bs2XHs'
