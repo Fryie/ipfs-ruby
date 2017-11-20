@@ -71,6 +71,12 @@ client.cat 'QmaVwjMgqjBD25apiuVVnaDqU8SsiiREAAy3Amb1Bs2XHs'
 # => "This is some example content."
 ```
 
+### pin rm
+```ruby
+client.pin_rm 'QmaVwjMgqjBD25apiuVVnaDqU8SsiiREAAy3Amb1Bs2XHs', recursive: true
+# => HTTP::Response
+```
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

@@ -1,6 +1,7 @@
 require 'ipfs/commands/ls'
 require 'ipfs/commands/cat'
 require 'ipfs/commands/add'
+require 'ipfs/commands/pin_rm'
 
 module IPFS
   class Client
@@ -33,6 +34,10 @@ module IPFS
 
     def add(file)
       Commands::Add.call self, file
+    end
+
+    def pin_rm(node, recursive: true)
+      Commands::PinRm.call self, node, recursive: recursive
     end
   end
 end
