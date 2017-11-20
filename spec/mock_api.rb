@@ -36,4 +36,10 @@ class MockAPI < Sinatra::Base
       Hash: 'QmZyBusQkNBXUqJV6JA1bPS7QTgngGKjdBYrdPatoqtHW9'
     }.to_json
   end
+
+  get '/api/v0/pin/rm' do
+    content_type :json
+
+    { 'Pins' => ['QmPokKskGJwH5XPX3jzEmKX365HnzED3n7x56v2jaNX5Lf'] }.to_json
+  end
 end
