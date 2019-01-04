@@ -4,7 +4,7 @@
 
 > This gem provides IPFS API bindings for Ruby, see [https://ipfs.io](https://ipfs.io).
 
-**Work in progress.**
+**Currently unmaintained. Please open an issue if you'd like to take ownership.**
 
 ## Installation
 Requires Ruby >= 2.1, since it uses the new required keyword arguments syntax.
