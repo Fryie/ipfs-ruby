@@ -1,4 +1,4 @@
-**Unmaintained. See [ipfs-api](https://github.com/tbenett/ruby-ipfs-api) instead.**
+**Unmaintained. See [ruby-pfs-http-client](https://github.com/tbenett/ruby-ipfs-http-client) instead.**
 
 # IPFS API Bindings for Ruby
 
